@@ -2,10 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Brilliant的博客</title>
-    <link>http://localhost:1313/</link>
+    <link>http://localhost:1313/Kobe-Brilliant/</link>
     <description>Recent content on Brilliant的博客</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Sep 2026 11:43:20 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/Kobe-Brilliant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First</title>
+      <link>http://localhost:1313/Kobe-Brilliant/posts/first/</link>
+      <pubDate>Sun, 27 Sep 2026 11:43:20 +0800</pubDate>
+      <guid>http://localhost:1313/Kobe-Brilliant/posts/first/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/Kobe-Brilliant/posts/my-first-post/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/Kobe-Brilliant/posts/my-first-post/</guid>
+      <description>&lt;p&gt;-&amp;ndash;&lt;/p&gt;
+&lt;p&gt;title: &amp;ldquo;我的第一篇博客&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;date: 2026-09-27&lt;/p&gt;
+&lt;p&gt;draft: false&lt;/p&gt;
+&lt;p&gt;-&amp;ndash;&lt;/p&gt;
+&lt;p&gt;# 我的第一篇博客&lt;/p&gt;
+&lt;p&gt;这是我的第一篇博客。&lt;/p&gt;
+&lt;p&gt;以后我会在这里记录我的学习过程。&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
