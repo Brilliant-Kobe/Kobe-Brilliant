@@ -1,0 +1,80 @@
+name: Deploy Hugo site
+# 工作流名称
+
+on:
+  push:
+    branches:
+      - main
+  # 每次把代码 push 到 main 分支时自动部署
+
+  workflow_dispatch:
+  # 允许你在 GitHub 网页上手动运行
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  # 给 GitHub Pages 部署所需要的权限
+
+jobs:
+
+  build:
+    # 第一步：构建 Hugo 网站
+
+    runs-on: ubuntu-latest
+    # 使用 GitHub 的 Linux 服务器
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v6
+        # 下载你的 GitHub 仓库代码
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        # 配置 GitHub Pages
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.166.0'
+          extended: true
+        # 安装 Hugo
+        # 你的本地 Hugo 是 0.166.0
+        # extended=true 用于支持主题的样式构建
+
+      - name: Build
+        run: hugo --gc --minify
+        # 使用 Hugo 构建网站
+        # 生成最终的 HTML/CSS/JS 文件
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./public
+        # 把 Hugo 生成的 public 文件夹上传给 GitHub Pages
+
+  deploy:
+    # 第二步：发布网站
+
+    needs: build
+    # 必须等 build 完成之后才能发布
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      # GitHub Pages 环境
+
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        # 正式把网站发布到公网
