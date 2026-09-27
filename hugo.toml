@@ -1,0 +1,4 @@
+baseURL = 'https://Brilliant-Kobe.github.io/Kobe-Brilliant/'
+locale = 'zh-cn'
+title = "Brilliant的博客"
+theme = "PaperMod"
